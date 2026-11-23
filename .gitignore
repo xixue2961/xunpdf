@@ -1,0 +1,17 @@
+/settings.json
+/ui-preferences.json
+/.venv/
+/runtime/
+/jobs/
+/exports/
+/.codex-task-cache/
+/render-runtime/
+/.deps/
+**/__pycache__/
+*.class
+*.log
+*.pdf
+*.mid
+*.musicxml
+*.omr
+*.mxl

@@ -1,0 +1,6 @@
+package org.audiveris.omr.score;
+import java.nio.file.*;import java.util.*;import java.security.*;import org.audiveris.omr.sheet.Book;
+public class PianoExport357 {
+ static String sha(Path p)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));}
+ public static void main(String[] a)throws Exception{((ch.qos.logback.classic.Logger)org.slf4j.LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME)).setLevel(ch.qos.logback.classic.Level.WARN);Path input=Path.of(a[0]),out=Path.of(a[2]);String hash=sha(input);Files.createDirectories(out);SourceStructure335.source=Path.of(a[1]);var book=Book.loadBook(input);if(book==null)throw new IllegalArgumentException("load");book.setExportPathSansExt(out.resolve("result"));if(!book.export(book.getValidStubs(),book.getScores()))throw new IllegalStateException("export");SourceStructure335.writeLedgers(out);if(!hash.equals(sha(input)))throw new IllegalStateException("input changed");System.out.println("PIANO_EXPORT357_OK");System.exit(0);}
+}
